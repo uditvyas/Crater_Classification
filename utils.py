@@ -44,7 +44,8 @@ def save_mean_profile(mean, label, save_dir, name):
     x = range(mean.shape[0])
     plt.plot(x,mean)
     plt.title(label)
-    plt.savefig(save_dir + name+ '.jpg')
+    print(name+'.jpg')
+    # plt.savefig(save_dir + name + '.jpg')
     plt.clf()
 
 
