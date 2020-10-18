@@ -9,4 +9,4 @@ num_images = 2076
 profiles, means, names = generate_profiles(image_dir, profile_save_dir, num_images)
 
 for i in range(len(means)):
-    save_mean_profile(means[i],'DEM: {}'.format(names[i]), figs_save_dir, names[i])
+    save_mean_profile(means[i],'DEM: {}'.format(names[i]), figs_save_dir, names[i].split(".")[0])
