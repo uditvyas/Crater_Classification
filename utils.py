@@ -42,10 +42,10 @@ def get_mean_profile (profiles):
 
 def save_mean_profile(mean, label, save_dir, name):
     x = range(mean.shape[0])
+    x = [a-len(x)//2 for a in x]
     plt.plot(x,mean)
     plt.title(label)
-    print(name+'.jpg')
-    # plt.savefig(save_dir + name + '.jpg')
+    plt.savefig(save_dir + name + '.jpg')
     plt.clf()
 
 
