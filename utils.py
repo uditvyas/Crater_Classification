@@ -40,11 +40,11 @@ def get_mean_profile (profiles):
     mean_profile = np.mean([i for i in profiles],axis=0)
     return mean_profile
 
-def plot_mean_profile(mean,label, save_dir,name):
+def save_mean_profile(mean,label, save_dir,name):
     x = range(mean.shape[0])
     plt.plot(x,mean)
     plt.title(label)
-    plt.savefig(save_dir+'means\\'+name+'.jpg')
+    plt.savefig(save_dir + name+ '.jpg')
     plt.clf()
 
 
