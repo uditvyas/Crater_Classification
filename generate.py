@@ -1,5 +1,4 @@
 from utils import *
-import tqdm
 
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
 save_dir = '/media/HDD2/btech2/Crater/Outputs/'
