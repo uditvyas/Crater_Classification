@@ -2,7 +2,7 @@ from utils import *
 
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
 profile_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/'
-figs_save_dir = '/media/HDD2/btech/Crater/Outputs/profiles/figs/'
+figs_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/figs/'
 num_images = 2076
 
 profiles, means, names = generate_profiles(image_dir, profile_save_dir, num_images)
