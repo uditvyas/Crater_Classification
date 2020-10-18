@@ -1,12 +1,10 @@
-import dependencies
+from utils import *
+from paths import *
 
 def curve_3D():
     pass
 
 all_params = []
-num_images = 10
-image_dir = r'D:\Nitin Khanna Project\SAMPLE DATA\dems'
-save_dir = r'D:\Nitin Khanna Project\SAMPLE OUTPUT\dems\means'
 # for i in range(num_images):
 #     mean = np.load(save_dir+'\mean_{}.npy'.format(i))
 #     x = list(range(len(mean)))
