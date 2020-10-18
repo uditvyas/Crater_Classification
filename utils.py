@@ -46,7 +46,7 @@ def generate_profiles(dir, save_dir, num):
     all_profiles = []
     all_means = []
     for i in tqdm.tqdm(range(num)):
-        name = dir + '\dem_' + str(i) + '.tif'
+        name = dir + '/dem_' + str(i) + '.tif'
 
         I_dem = tifffile.imread(name)
         profiles,labels = get_profiles(I_dem)
@@ -60,8 +60,8 @@ def generate_profiles(dir, save_dir, num):
         all_profiles.append(profiles)
         all_means.append(mean_profile)
 
-        np.save(save_dir+'profiles\profiles_{}'.format(i),profiles)
-        np.save(save_dir+'means\mean_{}'.format(i),mean_profile)
+        np.save(save_dir+'profiles/profiles_{}'.format(i),profiles)
+        np.save(save_dir+'means/mean_{}'.format(i),mean_profile)
 
     return all_profiles,all_means
 
