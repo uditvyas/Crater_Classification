@@ -11,3 +11,5 @@ from PIL import Image
 from scipy.optimize import curve_fit
 from sklearn.cluster import KMeans
 from tqdm import tqdm
+
+print("Libraries Imported")
