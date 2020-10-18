@@ -1,4 +1,13 @@
-import dependencies
+import matplotlib.pyplot as plt
+import numpy as np
+import cv2
+import tifffile
+import os
+import csv
+from PIL import Image
+from scipy.optimize import curve_fit
+from sklearn.cluster import KMeans
+from tqdm import tqdm
 
 def get_profiles(img):
     if(img.shape[0]>img.shape[1]):
