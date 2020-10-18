@@ -40,7 +40,7 @@ def get_mean_profile (profiles):
     mean_profile = np.mean([i for i in profiles],axis=0)
     return mean_profile
 
-def save_mean_profile(mean,label, save_dir,name):
+def save_mean_profile(mean, label, save_dir, name):
     x = range(mean.shape[0])
     plt.plot(x,mean)
     plt.title(label)
@@ -70,7 +70,7 @@ def generate_profiles(dir, save_dir, num):
         np.save(save_dir+'all/profiles_{}'.format(i),profiles)
         np.save(save_dir+'means/mean_{}'.format(i),mean_profile)
 
-    return all_profiles,all_means
+    return all_profiles,all_means, names
 
 
 def get_3D_profile(img):
