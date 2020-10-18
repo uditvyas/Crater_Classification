@@ -3,6 +3,7 @@ from utils import generate_profiles
 
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
 save_dir = '/media/HDD2/btech2/Crater/Outputs/'
+num_images = 2076
 
 # ortho_name = [image_dir +  '\orthos\ortho_' + str(i_num) + '.tif']
 profiles, means = generate_profiles(image_dir, save_dir, num_images)
