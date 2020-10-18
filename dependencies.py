@@ -1,4 +1,4 @@
-def Libraries:
+def Libraries():
     import matplotlib.pyplot as plt
     import numpy as np
     import cv2
