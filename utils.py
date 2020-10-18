@@ -50,12 +50,11 @@ def plot_mean_profile(mean,label, save_dir,name):
 
 def generate_profiles(dir, save_dir, num):
     print("Generating Profiles....")
-    # all_profiles = np.array([])
-    # all_means = np.array([])
+    names = os.listdir(dir)
     all_profiles = []
     all_means = []
-    for i in tqdm(range(num)):
-        name = dir + str(i) + '.tif'
+    for i in tqdm(range(len(names))):
+        name = dir + names[i] + '.tif'
         I_dem = tifffile.imread(name)
         print(I_dem.shape)
         # profiles,labels = get_profiles(I_dem)
