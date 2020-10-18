@@ -56,8 +56,8 @@ def generate_profiles(dir, save_dir, num):
     all_means = []
     for i in tqdm(range(num)):
         name = dir + str(i) + '.tif'
-        print(name)
-        # I_dem = tifffile.imread(name)
+        I_dem = tifffile.imread(name)
+        print(I_dem.shape)
         # profiles,labels = get_profiles(I_dem)
         # plot_profiles(profiles,labels)
         # mean_profile = get_mean_profile(profiles)
