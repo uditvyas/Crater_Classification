@@ -1,5 +1,5 @@
-import dependencies
-from utils import generate_profiles
+import dependencies import Libraries
+# from utils import generate_profiles
 
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
 save_dir = '/media/HDD2/btech2/Crater/Outputs/'
