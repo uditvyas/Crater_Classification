@@ -9,6 +9,7 @@ from scipy.optimize import curve_fit
 from sklearn.cluster import KMeans
 from tqdm import tqdm
 
+
 def get_3D_profile(img):
     img = Image.fromarray(img, 'Grayscale')
     img = img.resize((50,50))
@@ -18,7 +19,7 @@ def load_images(dir):
     imgs = []
     final_names = []
     for i in tqdm(names):
-        I_dem = tifffile.imread(i)
+        I_dem = tifffile.imread(dir + i)
         imgs.append(I_dem)
         i = i.split(".")[0]
         final_names.append(i)
