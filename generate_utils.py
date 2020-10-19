@@ -68,7 +68,7 @@ def generate_profiles(dir, save_dir, num):
         all_profiles.append(profiles)
         all_means.append(mean_profile)
 
-        np.save(save_dir+'all/profiles_{}'.format(i),profiles)
-        np.save(save_dir+'means/mean_{}'.format(i),mean_profile)
+        np.save(save_dir+'all/profiles_{}'.format(name[i].split('.')[0]),profiles)
+        np.save(save_dir+'means/mean_{}'.format(names[i].split('.')[0]),mean_profile)
 
     return all_profiles,all_means, names

@@ -1,4 +1,4 @@
-from utils import *
+from generate_utils import *
 from paths import *
 
 profiles, means, names = generate_profiles(image_dir, profile_save_dir, num_images)
