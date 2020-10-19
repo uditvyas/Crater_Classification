@@ -21,7 +21,7 @@ for i in range(num_images):
     I_dem = images[i]
     xy_data = normalise_coordinates(I_dem)
     I_dem = I_dem.flatten()
-    param,var = curve_fit(curve_3D,data,I_dem)
+    param,var = curve_fit(curve_3D,xy_data,I_dem)
     all_3D_params.append(param)
 all_3D_params = np.array(all_3D_params)
 print(all_3D_params.shape)
