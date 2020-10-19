@@ -1,8 +1,7 @@
-from utils import *
+from classify_utils import *
 from paths import *
 
-def curve_3D():
-    pass
+
 
 all_params = []
 # for i in range(num_images):
@@ -15,9 +14,13 @@ all_params = []
 #     y,mse = cmp_fit(mean,param)
 #     save_cmp(y, mean, mse, str(i), save_dir)
 
+images,names = load_images(image_dir)
+print(len(names),len(images))
+print(images[0].shape)
+'''
 for i in range(num_images):
-    name = image_dir + '\dem_' + str(i) + '.tif'
-    I_dem = tifffile.imread(name)
+    # name = image_dir + '\dem_' + str(i) + '.tif'
+    # I_dem = tifffile.imread(name)
 
     h,w = I_dem.shape
     # print(I_dem)
@@ -74,3 +77,4 @@ for i in range(num_images):
 # labels = km.labels_
 # print(labels)
 
+'''
