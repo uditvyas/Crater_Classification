@@ -1,9 +1,6 @@
 from classify_utils import *
 from paths import *
 
-
-
-all_params = []
 # for i in range(num_images):
 #     mean = np.load(save_dir+'\mean_{}.npy'.format(i))
 #     x = list(range(len(mean)))
@@ -15,42 +12,19 @@ all_params = []
 #     save_cmp(y, mean, mse, str(i), save_dir)
 
 images,names = load_images(image_dir)
-print(len(names),len(images))
-print(images[0].shape)
-'''
+print("Images Loaded: {}".format(len(images)))
+print("Names Loaded: {}".format(len(names)))
+
+all_3D_params = []
+
 for i in range(num_images):
-    # name = image_dir + '\dem_' + str(i) + '.tif'
-    # I_dem = tifffile.imread(name)
-
-    h,w = I_dem.shape
-    # print(I_dem)
-
-    x = np.array(list(range(w)))
-    x = [a-len(x)//2 for a in x]
-    X = []
-    for item in x:
-        xs = [item]*h
-        for i in xs:
-            X.append(i)
-    
-    y = np.array(list(range(h)))
-    y = [a-len(y)//2 for a in y]
-    Y = []
-    for _ in range(w):
-        for i in y:
-            Y.append(i)
-
+    I_dem = images[i]
+    xy_data = normalise_coordinates(I_dem)
     I_dem = I_dem.flatten()
-    X = np.array(X)
-    Y = np.array(Y)
-    print(X.shape)
-    print(Y.shape)
-    print(I_dem.shape)
-
-    data = [X,Y]
-
     param,var = curve_fit(curve_3D,data,I_dem)
-
+    all_3D_params.append(param)
+all_3D_params = np.array(all_3D_params)
+print(all_3D_params.shape)
 
 # all_params = np.array(all_params)
 # x = []
@@ -77,4 +51,3 @@ for i in range(num_images):
 # labels = km.labels_
 # print(labels)
 
-'''

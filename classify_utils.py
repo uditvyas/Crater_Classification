@@ -9,11 +9,6 @@ from scipy.optimize import curve_fit
 from sklearn.cluster import KMeans
 from tqdm import tqdm
 
-
-def get_3D_profile(img):
-    img = Image.fromarray(img, 'Grayscale')
-    img = img.resize((50,50))
-
 def load_images(dir):
     names = os.listdir(dir)
     imgs = []
@@ -24,6 +19,37 @@ def load_images(dir):
         i = i.split(".")[0]
         final_names.append(i)
     return imgs,final_names
+
+def normalise_coordinates(I_dem):
+    h,w = I_dem.shape
+    # Defining Ranges
+    x = np.array(list(range(w)))
+    y = np.array(list(range(h)))
+    # Normalising
+    x = [a-len(x)//2 for a in x]
+    small = np.min(y)
+    y = [a - small for a in y]    
+    # Making arrays for curve fitting
+    X = []
+    for item in x:
+        xs = [item]*h
+        for i in xs:
+            X.append(i)
+    
+    Y = []
+    for _ in range(w):
+        for i in y:
+            Y.append(i)
+
+    X = np.array(X)
+    Y = np.array(Y)
+
+    data = [X,Y]
+    return data
+
+def get_3D_profile(img):
+    img = Image.fromarray(img, 'Grayscale')
+    img = img.resize((50,50))
 
 def curve_2D(x,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,a10):
     return a0 + a1*x + a2*x**2 + a3*x**3 + a4*x**4 + a5*x**5 + a6*x**6 + a7*x**7 + a8*x**8 + a9*x**9 + a10*x**10
