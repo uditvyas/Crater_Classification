@@ -1,5 +1,6 @@
 from classify_utils import *
 from paths import *
+from tqdm import tqdm
 
 # for i in range(num_images):
 #     mean = np.load(save_dir+'\mean_{}.npy'.format(i))
@@ -17,7 +18,7 @@ print("Names Loaded: {}".format(len(names)))
 
 all_3D_params = []
 
-for i in range(num_images):
+for i in tqdm(range(num_images)):
     I_dem = images[i]
     xy_data = normalise_coordinates(I_dem)
     I_dem = I_dem.flatten()
