@@ -49,7 +49,7 @@ def save_mean_profile(mean, label, save_dir, name):
     plt.clf()
 
 
-def generate_profiles(dir, save_dir, num):
+def generate_save_profiles(dir, save_dir, num):
     print("Generating Profiles....")
     names = os.listdir(dir)
     all_profiles = []
