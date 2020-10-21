@@ -2,15 +2,9 @@ from extract_features_utils import *
 from paths import *
 from tqdm import tqdm
 
-# for i in range(num_images):
-#     mean = np.load(save_dir+'\mean_{}.npy'.format(i))
-#     x = list(range(len(mean)))
-#     x = [a-len(x)//2 for a in x]
-#     param, var = curve_fit(curve_2D,x,mean)
-#     all_params.append(param)
-    
-#     y,mse = cmp_fit(mean,param)
-#     save_cmp(y, mean, mse, str(i), save_dir)
+##########################################################################################
+## GENERATING 3D PARAMETERS
+##########################################################################################
 
 images,names = load_images(image_dir)
 print("Images Loaded: {}".format(len(images)))
@@ -29,6 +23,30 @@ np.save(params_3D_save_dir+"all_3D_params",all_3D_params)
 print("3D Parameters Generated: ",all_3D_params.shape)
 
 
+##########################################################################################
+## GENERATING 2D PARAMETERS
+##########################################################################################
+
+all_2D_params = []
+print(names[0])
+for i in tqdm(range(num_images)):
+    profiles = np.load(all_profile_save_dir+'profiles_{}.npy'.format(names[i]))
+    
+    x = list(range(len(profiles[0])))
+    x = [a-len(x)//2 for a in x]
+    
+    params = []
+    for profile in profiles:
+        minimum = np.min(profile)
+        profile = profile - minimum
+        param, var = curve_fit(curve_2D,x,profile)
+        params.append(param)
+
+    all_2D_params.append(params)
+all_2D_params = np.array(all_2D_params)
+np.save(params_2D_save_dir + "all_2D_params",all_2D_params)
+##########################################################################################
+##########################################################################################
 
 # all_params = np.array(all_params)
 # x = []
@@ -55,3 +73,5 @@ print("3D Parameters Generated: ",all_3D_params.shape)
 # labels = km.labels_
 # print(labels)
 
+# y,mse = cmp_fit(mean,param)
+    # save_cmp(y, mean, mse, str(i), save_dir)
