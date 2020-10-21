@@ -26,7 +26,7 @@ for i in tqdm(range(num_images)):
     all_3D_params.append(param)
 all_3D_params = np.array(all_3D_params)
 np.save(params_3D_save_dir+"all_3D_params",all_3D_params)
-print("3D Parameters Generated: "all_3D_params.shape)
+print("3D Parameters Generated: ",all_3D_params.shape)
 
 
 
