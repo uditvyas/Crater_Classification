@@ -24,7 +24,7 @@ def cmp_fit(profile, params):
 
 def save_cmp(y, profile, mse, label, save_dir):
     n = len(profile)
-    x = list(range(profile[0]))
+    x = list(range(len(profile[0])))
     x = [a-len(x)//2 for a in x]
 
     fig, axs = plt.subplots(2, 2)
