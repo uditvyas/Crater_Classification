@@ -4,4 +4,5 @@ mean_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/means/'
 figs_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/figs/'
 params_3D_save_dir = '/media/HDD2/btech2/Crater/Outputs/params3d/'
 params_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/params/'
+cmp_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/comparisons/'
 num_images = 2076
