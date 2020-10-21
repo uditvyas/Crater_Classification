@@ -30,7 +30,7 @@ print("Names Loaded: {}".format(len(names)))
 all_2D_params = []
 print(names[0])
 for i in tqdm(range(num_images)):
-    profiles = np.load(all_profile_save_dir+'profiles_{}.npy'.format(names[i]))
+    profiles = np.load(all_profiles_save_dir+'profiles_{}.npy'.format(names[i]))
     
     x = list(range(len(profiles[0])))
     x = [a-len(x)//2 for a in x]
