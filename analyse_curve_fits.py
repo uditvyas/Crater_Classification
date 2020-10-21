@@ -1,5 +1,5 @@
 import numpy as np
-import paths
+from paths import *
 from tqdm import tqdm
 from analyse_curve_fit_utils import *
 
