@@ -37,3 +37,4 @@ def save_cmp(y, profile, mse, label, save_dir):
             counter += 1
     plt.savefig(save_dir+"{}.jpg".format(label))
     plt.clf()
+    plt.close()
