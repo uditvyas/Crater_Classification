@@ -10,17 +10,17 @@ images,names = load_images(image_dir)
 print("Images Loaded: {}".format(len(images)))
 print("Names Loaded: {}".format(len(names)))
 
-all_3D_params = []
-print("Generating 3D parameters..")
-for i in tqdm(range(num_images)):
-    I_dem = images[i]
-    xy_data = normalise_coordinates(I_dem)
-    I_dem = I_dem.flatten()
-    param,var = curve_fit(curve_3D,xy_data,I_dem)
-    all_3D_params.append(param)
-all_3D_params = np.array(all_3D_params)
-np.save(params_3D_save_dir+"all_3D_params",all_3D_params)
-print("3D Parameters Generated: ",all_3D_params.shape)
+# all_3D_params = []
+# print("Generating 3D parameters..")
+# for i in tqdm(range(num_images)):
+#     I_dem = images[i]
+#     xy_data = normalise_coordinates(I_dem)
+#     I_dem = I_dem.flatten()
+#     param,var = curve_fit(curve_3D,xy_data,I_dem)
+#     all_3D_params.append(param)
+# all_3D_params = np.array(all_3D_params)
+# np.save(params_3D_save_dir+"all_3D_params",all_3D_params)
+# print("3D Parameters Generated: ",all_3D_params.shape)
 
 
 ##########################################################################################
