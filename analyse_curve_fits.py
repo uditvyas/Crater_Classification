@@ -1,6 +1,6 @@
 import numpy as np
 import paths
-import tqdm.tqdm as tqdm
+from tqdm as tqdm
 from analyse_curve_fit_utils import *
 
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
