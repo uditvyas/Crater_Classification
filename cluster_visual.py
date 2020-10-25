@@ -16,7 +16,7 @@ for j in range(4):
     labels = km.labels_
     
     tsne = TSNE(n_components=2, verbose=1)
-    tsne_results = tsne.fit_transform(km_result)
+    tsne_results = tsne.fit_transform(params)
 
     data = pd.DataFrame()
     data['x'] = tsne_results[:,0]
