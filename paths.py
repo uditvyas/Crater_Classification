@@ -5,4 +5,5 @@ figs_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/figs/'
 params_3D_save_dir = '/media/HDD2/btech2/Crater/Outputs/params3d/'
 params_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/params/'
 cmp_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/comparisons/'
+cluster_results_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/cluster/'
 num_images = 2076
