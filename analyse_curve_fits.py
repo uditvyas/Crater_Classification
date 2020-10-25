@@ -4,6 +4,7 @@ from tqdm import tqdm
 from analyse_curve_fit_utils import *
 
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
+names = np.load(params_2D_save_dir+'names.npy')
 print("Params Loaded: ",all_2D_params.shape)
 
 all_profiles = []
