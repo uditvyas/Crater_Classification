@@ -19,6 +19,8 @@ def cmp_fit(profile, params):
     for i in x:
         y.append(curve_2D(i,params[0],params[1],params[2],params[3],params[4],params[5],params[6],params[7],params[8],params[9],params[10]))
     y = np.array(y)
+
+    profile = profile - np.min(profile)
     mse = np.mean((profile-y)**2)
     return y,mse
 
