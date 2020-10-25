@@ -9,12 +9,12 @@ names = np.load(params_2D_save_dir+'names.npy')
 print("Params Loaded: ",all_2D_params.shape)
 
 
-for i in range(4):
+for j in range(4):
     x = []
     y = []
 
     for i in tqdm(range(3,10)):
-        params = all_2D_params[:,i,:]
+        params = all_2D_params[:,j,:]
         
         # initialise and fit the Kmeams model
         kmeans = KMeans(n_clusters= i, random_state=0)
