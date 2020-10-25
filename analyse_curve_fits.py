@@ -10,7 +10,7 @@ print("Params Loaded: ",all_2D_params.shape)
 all_profiles = []
 
 for i in tqdm(range(num_images)):
-    profiles = np.load(all_profiles_save_dir + names[i])
+    profiles = np.load(all_profiles_save_dir + "profiles_" + names[i] + ".npy")
     params = all_2D_params[i]
     y_all = []
     mse_all = []
