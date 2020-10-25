@@ -31,6 +31,7 @@ def save_cmp(y, profile, mse, label, save_dir):
     counter = 0
     for i in range(n//2):
         for j in range(n//2):
+            profile[counter] = profile[counter] - np.min(profile[counter])
             axs[i, j].plot(x, profile[counter])
             axs[i, j].plot(x, y[counter])
             axs[i, j].set_title('MSE: {}'.format(mse[counter]))

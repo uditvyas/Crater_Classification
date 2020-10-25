@@ -48,31 +48,3 @@ all_2D_params = np.array(all_2D_params)
 np.save(params_2D_save_dir + "all_2D_params",all_2D_params)
 ##########################################################################################
 ##########################################################################################
-
-# all_params = np.array(all_params)
-# x = []
-# y = []
-
-# for i in tqdm(range(3,10)):
-#     # initialise and fit the Kmeams model
-#     kmeans = KMeans(n_clusters= i, random_state=0)
-#     result = kmeans.fit(all_params)
-
-#     # append the number of clusters to x data list
-#     x.append(i)
-
-#     # append average within cluster sum of squares to y data set
-#     awcss = kmeans.inertia_/all_params.shape[0]
-#     y.append(awcss)
-#     print("Clusters = {}\tScore = {}".format(i,awcss))
-
-# plt.plot(x,y,'bo-')
-# plt.show()
-
-# km = KMeans(n_clusters=4)
-# result = km.fit(all_params)
-# labels = km.labels_
-# print(labels)
-
-# y,mse = cmp_fit(mean,param)
-    # save_cmp(y, mean, mse, str(i), save_dir)
