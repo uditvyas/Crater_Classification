@@ -38,6 +38,7 @@ def save_cmp(y, profile, mse, label, save_dir):
             axs[i, j].plot(x, y[counter])
             axs[i, j].set_title('MSE: {}'.format(mse[counter]))
             counter += 1
+    fig.tight_layout(pad=5.0)
     plt.savefig(save_dir+"{}.jpg".format(label))
     plt.clf()
     plt.close()
