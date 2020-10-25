@@ -13,7 +13,7 @@ for j in range(4):
     x = []
     y = []
 
-    for i in tqdm(range(3,10)):
+    for i in tqdm(range(3,16)):
         params = all_2D_params[:,j,:]
         
         # initialise and fit the Kmeams model
@@ -31,7 +31,7 @@ for j in range(4):
         print("Clusters = {}\tScore = {}".format(i,awcss))
 
     plt.plot(x,y,'bo-')
-    plt.savefig(cluster_results_dir+"profiles_i.jpg")
+    plt.savefig(cluster_results_dir+"profiles_{}.jpg".format(j))
     plt.close()
 
 # km = KMeans(n_clusters=4)
