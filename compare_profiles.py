@@ -1,6 +1,6 @@
 from paths import *
 import numpy as np
-import matplotlib.pytplot as plt
+import matplotlib.pyplot as plt
 from compare_profiles_utils import *
 
 names = np.load(names_dir+'names.npy')
