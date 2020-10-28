@@ -9,7 +9,7 @@ from tqdm import tqdm
 images,names = load_images(image_dir)
 print("Images Loaded: {}".format(len(images)))
 print("Names Loaded: {}".format(len(names)))
-np.save(params_2D_save_dir+"names",np.array(names))
+np.save(names_dir+"names",np.array(names))
 
 all_3D_params = []
 print("Generating 3D parameters..")
