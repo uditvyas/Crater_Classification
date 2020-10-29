@@ -14,7 +14,7 @@ for label in range(len(n_clusters)):
 
 for i in tqdm(range(len(labels))):
     which = labels[i]
-    image = names[i]
+    image = names[i] + '.jpg'
     source = image_dir + image
     destination = cluster_results_dir + 'cluster_{}'.format(which) + image
     copy(source,destination)
