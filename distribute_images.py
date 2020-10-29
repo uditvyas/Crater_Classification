@@ -9,7 +9,7 @@ labels = np.load(cluster_results_dir+"labels.npy")
 
 n_clusters = np.unique(labels)
 
-for label in range(n_clusters):
+for label in range(len(n_clusters)):
     os.mkdir(cluster_results_dir+"cluster_{}".format(label))
 
 for i in tqdm(range(len(labels))):
