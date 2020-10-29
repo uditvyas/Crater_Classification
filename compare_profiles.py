@@ -19,4 +19,4 @@ for i in tqdm(range(len(names))):
         Matrix[i][j] = similarity(first_profiles,second_profiles,sigma)
         Matrix[j][i] = Matrix[i][j]
 
-np.save(cluster_results_dir+"distance_matrix.npy")
+np.save(cluster_results_dir+"distance_matrix.npy", Matrix)
