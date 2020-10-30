@@ -7,7 +7,7 @@ print("Distance Matrix Loaded: ",distance_matrix.shape)
 
 
 cluster = DBSCAN(eps=2.0,min_samples = 100).fit(distance_matrix)
-labels = cluster.labes_
+labels = cluster.labels_
 print(labels)
 
 np.save(cluster_results_dir+"labels",labels)
