@@ -18,6 +18,6 @@ for label in range(len(n_clusters)):
 for i in tqdm(range(len(labels))):
     which = labels[i]
     image = names[i] + '.tif'
-    source = image_dir + image
+    source = ortho_dir + image
     destination = cluster_save_dir + 'cluster_{}/'.format(which) + image
     copy(source,destination)

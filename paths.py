@@ -1,4 +1,5 @@
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
+ortho_dir = '/media/HDD2/btech2/Crater/dataset_v1/orthos/'
 all_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/all/'
 mean_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/means/'
 figs_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/figs/'
