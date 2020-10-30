@@ -9,13 +9,13 @@ def load_profiles(names,dir):
     print("Profiles Loaded")
     
 def compare(first,second,sigma):
-    cosine_distance = cosine(first,second)
-    # sqeuclidean_distance = sqeuclidean(first,second)
+    # cosine_distance = cosine(first,second)
+    sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
-    which = np.absolute(cosine_distance)
+    which = sqeuclidean_distance
     distance = np.exp(-which/(sigma**2))
     return distance
-
+    
 def similarity(first,second,sigma):
     n = first.shape[0]
     all_scores = []
