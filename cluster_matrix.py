@@ -10,9 +10,4 @@ cluster = AgglomerativeClustering(n_clusters=8, affinity='precomputed', linkage=
 labels = cluster.labels_
 print(np.unique(labels,return_counts=True))
 
-cluster = AgglomerativeClustering(n_clusters=8, affinity='precomputed', linkage='complete').fit(distance_matrix)
-labels = cluster.labels_
-print(np.unique(labels,return_counts=True))
-
-
 np.save(cluster_results_dir+"labels",labels)
