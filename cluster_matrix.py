@@ -4,6 +4,7 @@ from sklearn.cluster import DBSCAN
 
 distance_matrix = np.load(cluster_results_dir+"distance_matrix.npy")
 print("Distance Matrix Loaded: ",distance_matrix.shape)
+print(distance_matrix[0:5,0:5])
 
 cluster = DBSCAN(min_samples = 100).fit(distance_matrix)
 labels = cluster.labels_

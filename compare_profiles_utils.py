@@ -12,7 +12,7 @@ def compare(first,second,sigma):
     cosine_distance = cosine(first,second)
     # sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
-    which = cosine_distance
+    which = np.absolute(cosine_distance)
     distance = np.exp(-which/(sigma**2))
     return distance
 
