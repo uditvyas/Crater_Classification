@@ -8,6 +8,6 @@ print("Distance Matrix Loaded: ",distance_matrix.shape)
 
 cluster = AgglomerativeClustering(n_clusters=8, affinity='precomputed', linkage='single').fit(distance_matrix)
 labels = cluster.labels_
-print(labels)
+print(np.unique(labels,return_counts=True))
 
 np.save(cluster_results_dir+"labels",labels)
