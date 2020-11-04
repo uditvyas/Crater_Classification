@@ -23,6 +23,6 @@ def similarity(first,second,sigma):
         local_sum = 0
         for j in range(n):
             local_sum += compare(first[j],second[(j+i)%n],sigma)
-        all_scores.append(local_sum)
+        all_scores.append(local_sum/4)
     distance = np.min(np.array(all_scores))
     return distance
