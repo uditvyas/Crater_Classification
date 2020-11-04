@@ -8,8 +8,9 @@ print("Distance Matrix Loaded: ",distance_matrix.shape)
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
 
 
-cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=0.8, affinity='precomputed', linkage='average').fit(distance_matrix)
+cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=1, affinity='precomputed', linkage='average').fit(distance_matrix)
+print("Maximum of Distance Matrix is {}".format(np.max(distance_matrix)))
 labels = cluster.labels_
 print(np.unique(labels,return_counts=True))
 np.save(cluster_results_dir+"labels",labels)
-print("Silhouette Score: ".format(sh_score(all_2D_params,labels)))
+# print("Silhouette Score: ".format(sh_score(all_2D_params,labels)))
