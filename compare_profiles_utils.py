@@ -13,7 +13,7 @@ def compare(first,second,sigma):
     sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
     which = sqeuclidean_distance
-    distance = np.exp(-which/(sigma**2))
+    distance = 1 - np.exp(-which/(sigma**2))
     return distance
     
 def similarity(first,second,sigma):
