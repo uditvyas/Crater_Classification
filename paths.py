@@ -9,4 +9,4 @@ cmp_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/comparisons/'
 cluster_results_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/cluster/'
 names_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/'
 num_images = 2076
-sigma = 50
+sigma = 85
