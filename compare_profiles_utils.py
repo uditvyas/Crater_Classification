@@ -12,8 +12,8 @@ def compare(first,second,sigma):
     # cosine_distance = cosine(first,second)
     sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
-    which = sqeuclidean_distance
-    distance = 1 - np.exp(-which/(sigma**2))
+    distance = sqeuclidean_distance
+    # distance = 1 - np.exp(-which/(sigma**2))
     return distance
     
 def similarity(first,second,sigma):
