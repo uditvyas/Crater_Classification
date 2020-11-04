@@ -13,4 +13,4 @@ print("Maximum of Distance Matrix is {}".format(np.max(distance_matrix)))
 labels = cluster.labels_
 print(np.unique(labels,return_counts=True))
 np.save(cluster_results_dir+"labels",labels)
-# print("Silhouette Score: ".format(sh_score(all_2D_params,labels)))
+print("Silhouette Score: ".format(sh_score(distance_matrix, labels, metric = "precomputed")))
