@@ -10,5 +10,5 @@ all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
 cluster = AgglomerativeClustering(n_clusters=8, affinity='precomputed', linkage='complete').fit(distance_matrix)
 labels = cluster.labels_
 print(np.unique(labels,return_counts=True))
-print("Silhouette Score: ".format(sh_score(all_2D_params,labels)))
 np.save(cluster_results_dir+"labels",labels)
+print("Silhouette Score: ".format(sh_score(all_2D_params,labels)))
