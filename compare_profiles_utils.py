@@ -7,6 +7,7 @@ def load_profiles(names,directory):
         nm = name.split('.')[0]
         all_profiles.append(np.load(directory+'profiles_{}.npy'.format(nm)))
     print("Profiles Loaded")
+    return all_profiles
     
 def compare(first,second,sigma):
     # cosine_distance = cosine(first,second)
