@@ -1,11 +1,11 @@
 import numpy as np
 from scipy.spatial.distance import sqeuclidean, chebyshev, cosine
 
-def load_profiles(names,dir):
+def load_profiles(names,directory):
     all_profiles = []
     for name in names:
         nm = name.split('.')[0]
-        all_profiles.append(np.load(dir+'profiles_{}.npy'.format(nm)))
+        all_profiles.append(np.load(directory+'profiles_{}.npy'.format(nm)))
     print("Profiles Loaded")
     
 def compare(first,second,sigma):
