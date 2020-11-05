@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.spatial.distance import sqeuclidean, chebyshev, cosine
+from scipy.spatial.distance import sqeuclidean, chebyshev, cosine, mahalanobis
 
 def load_profiles(names,dir):
     all_profiles = []
@@ -10,9 +10,12 @@ def load_profiles(names,dir):
     
 def compare(first,second,sigma):
     # cosine_distance = cosine(first,second)
-    sqeuclidean_distance = sqeuclidean(first,second)
+    # sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
-    distance = sqeuclidean_distance
+    cov = np.cov(first, second)
+    inv = np.linalg.inv(cov)
+    mahalanobis_distance = mahalanobis(first, second, inv)
+    distance = mahalanobis_distance
     # distance = 1 - np.exp(-which/(sigma**2))
     return distance
     

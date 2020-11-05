@@ -18,5 +18,5 @@ for i in tqdm(range(len(names))):
         second_profiles = all_2D_params[j]
         Matrix[i][j] = similarity(first_profiles,second_profiles,sigma)
         Matrix[j][i] = Matrix[i][j]
-
+Matrix = Matrix/np.max(Matrix)
 np.save(cluster_results_dir+"distance_matrix.npy", Matrix)
