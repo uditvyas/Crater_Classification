@@ -12,7 +12,7 @@ def compare(first,second,sigma):
     # cosine_distance = cosine(first,second)
     # sqeuclidean_distance = sqeuclidean(first,second)
     # chebyshev_distance = chebyshev(first,second)
-    cov = np.cov(np.stack((first, second), axis = 1) )
+    cov = np.cov(np.stack((first, second), axis = 1)) + 1e-5*np.eye(len(first))
     inv = np.linalg.inv(cov)
     mahalanobis_distance = mahalanobis(first, second, inv)
     distance = mahalanobis_distance
