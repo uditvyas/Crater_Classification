@@ -7,10 +7,10 @@ from scipy import signal
 
 names = np.load(names_dir+'names.npy')
 all_profiles = load_profiles(names,all_profiles_save_dir)
-
+print("Profiles Loaded: ", len(all_profiles))
 resampled_profiles = []
 
-for profiles in all_profiles:
+for profiles in tqdm(all_profiles):
     r_profiles = []
     for profile in profiles:
         profile = signal.resample(profile, resample_dimension)
