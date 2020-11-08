@@ -87,7 +87,7 @@ def get_profiles(img, profiles_per_image):
 
     return all_profiles, labels
 
-def generate_save_profiles(dir, save_dir, num):
+def generate_save_profiles(dir, save_dir, num, profiles_per_image):
     print("Generating Profiles....")
     names = os.listdir(dir)
     all_profiles = []
@@ -95,7 +95,7 @@ def generate_save_profiles(dir, save_dir, num):
     for i in tqdm(range(len(names))):
         name = dir + names[i]
         I_dem = tifffile.imread(name)
-        profiles,labels = get_profiles(I_dem)
+        profiles,labels = get_profiles(I_dem, profiles_per_image)
         # plot_profiles(profiles,labels)
         # mean_profile = get_mean_profile(profiles)
 
