@@ -12,3 +12,4 @@ names_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/'
 num_images = 2076
 sigma = 250
 resample_dimension = 75
+num_profiles = 15

@@ -6,10 +6,10 @@ from tqdm import tqdm
 ## GENERATING 3D PARAMETERS
 ##########################################################################################
 
-images,names = load_images(image_dir)
+names = np.load(names_dir+"names.npy")
+images,names = load_images(image_dir, names)
 print("Images Loaded: {}".format(len(images)))
 print("Names Loaded: {}".format(len(names)))
-np.save(names_dir+"names",np.array(names))
 
 all_3D_params = []
 print("Generating 3D parameters..")

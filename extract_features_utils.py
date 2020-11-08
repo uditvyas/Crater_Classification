@@ -8,8 +8,7 @@ from PIL import Image
 from scipy.optimize import curve_fit
 from tqdm import tqdm
 
-def load_images(dir):
-    names = os.listdir(dir)
+def load_images(dir, names):
     imgs = []
     final_names = []
     for i in tqdm(names):
