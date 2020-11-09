@@ -4,6 +4,7 @@ from sklearn.cluster import AgglomerativeClustering
 from sklearn.metrics import silhouette_score as sh_score
 
 distance_matrix = np.load(cluster_results_dir+"distance_matrix.npy")
+distance_matrix = distance_matrix*4/num_profiles
 print("Distance Matrix Loaded: ",distance_matrix.shape)
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
 
