@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.spatial.distance import euclidean, chebyshev, cosine
+from paths import *
 
 def load_profiles(names,directory):
     all_profiles = []
@@ -24,6 +25,6 @@ def similarity(first,second,sigma):
         local_sum = 0
         for j in range(n):
             local_sum += compare(first[j],second[(j+i)%n],sigma)
-        all_scores.append(local_sum/4)
+        all_scores.append(local_sum/num_profiles)
     distance = np.min(np.array(all_scores))
     return distance
