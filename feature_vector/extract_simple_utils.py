@@ -6,21 +6,19 @@ def get_depth(img):
     n, m = img.shape
     n = min(n,m)        # radius = 1/3 n
     shape = int(n/3*1.15)
-    print(shape)
+
     ext = (n - 2*shape)//2
 
-    img_1 = img[ext:n-ext, ext:n-ext]
-    print(img_1.shape)
-    # img_1 = img_1[:2*shape]
+    img_1 = img[ext:n-ext+1, ext:n-ext+1]
+
     final_details = np.empty((shape,shape))
     
     y,x = np.ogrid[-shape: shape+1, -shape: shape+1]
     mask = x**2+y**2 > shape**2
 
     img_1[mask] = np.NaN
-    print(img_1)
 
-    depth = 0
+    depth = np.nanmax(img_1) - np.nanmin(img_1)
 
     return depth
 
