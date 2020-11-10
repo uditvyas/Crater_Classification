@@ -21,9 +21,11 @@ def get_rim_height(img, depth):
     shape = int(n/3* rim_height_param)        # 1.4 times radius circle
     ext = (n - 2*shape)//2
 
-    y,x = np.ogrid[-n//2: n//2+1, -n//2: n//2+1]
+    y,x = np.ogrid[-n//2: n//2, -n//2: n//2]
     mask = x**2+y**2 > shape**2
 
+    masked_image = img
+    masked_image = masked_image[:mask.shape[0], :mask.shape[0]]
     masked_image = img[mask]
     outside_avg = np.nanmean(masked_image)
     rim_height = depth - (outside_avg - np.min(img))
