@@ -16,6 +16,7 @@ def get_depth(img):
     y,x = np.ogrid[-shape: shape+1, -shape: shape+1]
     mask = x**2+y**2 > shape**2
 
+    img_1 = img_1[:mask.shape[0]]
     img_1[mask] = np.nan
 
     depth = np.nanmax(img_1) - np.nanmin(img_1)
