@@ -51,6 +51,7 @@ def save_mean_profile(mean, label, save_dir, name):
 '''
 
 def get_profiles(img, profiles_per_image):
+    profiles_per_image += 1
     n, m = img.shape
     n = min(n,m)
     delta_theta = 180//profiles_per_image
