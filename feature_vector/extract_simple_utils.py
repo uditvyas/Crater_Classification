@@ -1,11 +1,11 @@
 import numpy as np
-
+from paths import *
 
 
 def get_depth(img):
     n, m = img.shape
     n = min(n,m)        # radius = 1/3 n
-    shape = int(n/3*1.15)
+    shape = int(n/3* depth_param)   # 1.15 times radius circle
     ext = (n - 2*shape)//2
     cropped_image = img[ext:n-ext+1, ext:n-ext+1].astype(np.float32)
     y,x = np.ogrid[-shape: shape+1, -shape: shape+1]
@@ -15,8 +15,18 @@ def get_depth(img):
     depth = np.nanmax(cropped_image) - np.nanmin(cropped_image)
     return depth
 
-def get_rim_height(img):
-    rim_height = 0
+def get_rim_height(img, depth):
+    n, m = img.shape
+    n = min(n,m)        # radius = 1/3 n
+    shape = int(n/3* rim_height_param)        # 1.4 times radius circle
+    ext = (n - 2*shape)//2
+
+    y,x = np.ogrid[-shape: shape+1, -shape: shape+1]
+    mask = x**2+y**2 > shape**2
+
+    masked_image = img[mask]
+    outside_avg = np.nanmean(masked_image)
+    rim_height = depth - (outside_avg - np.min(img))
     return rim_height
 
 def get_rim_width(img):

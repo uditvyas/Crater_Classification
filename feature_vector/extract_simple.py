@@ -10,8 +10,8 @@ for i in tqdm(range(len(names))):
     I_dem = tifffile.imread(name)
 
     depth = get_depth(I_dem)
-    print(depth)
-    rim_height = get_rim_height(I_dem)
+    rim_height = get_rim_height(I_dem, depth)
+    print(rim_height)
     rim_width = get_rim_width(I_dem)
     floor_diameter = get_floor_diameter(I_dem)
     interior_volume = get_interior_volume(I_dem)
