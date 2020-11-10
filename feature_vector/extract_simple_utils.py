@@ -9,7 +9,7 @@ def get_depth(img):
 
     ext = (n - 2*shape)//2
 
-    img_1 = img[ext:n-ext+1, ext:n-ext+1]
+    img_1 = img[ext:n-ext+1, ext:n-ext+1].astype(np.float32)
 
     final_details = np.empty((shape,shape))
     
