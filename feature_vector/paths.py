@@ -16,3 +16,6 @@ resample_dimension = 75
 
 depth_param = 1.15
 rim_height_param = 1.3
+rim_width_param = 0.05
+floor_diameter_threshold = 0.1
+floor_diameter_tolerance = 0.05
