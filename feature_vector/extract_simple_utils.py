@@ -33,7 +33,8 @@ def get_rim_height(img, depth):
     return rim_height
 
 def get_rim_width(img):
-    rim_width = 0
+    n, m = img.shape
+    rim_width = np.ceil(min(n,m)//3)        # radius = 1/3 n
     return rim_width
 
 def get_floor_diameter(img):
