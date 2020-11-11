@@ -48,7 +48,7 @@ def get_floor_diameter(img,depth):
     n, m = img.shape
     n = min(n,m)        # radius = 1/3 n
     radius = int(n/3)
-    ext = (n - 2*shape)//2
+    ext = (n - 2*radius)//2
     cropped_image = img[ext:n-ext+1, ext:n-ext+1].astype(np.float32)
     y,x = np.ogrid[-radius: radius+1, -radius: radius+1]
     mask = x**2+y**2 > radius**2
