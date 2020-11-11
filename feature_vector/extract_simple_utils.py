@@ -30,7 +30,7 @@ def get_rim_height(img, depth):
     masked_image = img[mask]
     outside_avg = np.nanmean(masked_image)
     rim_height = depth - (outside_avg - np.min(img))
-    return np.max(0.0,rim_height)
+    return max(0.0,rim_height)
 
 def get_rim_width(img,rim_height,depth):
     n, m = img.shape
