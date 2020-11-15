@@ -13,6 +13,5 @@ for i in tqdm(range(len(names))):
     rim_height = get_rim_height(I_dem, depth)
     # rim_width = get_rim_width(I_dem,rim_height,depth)
     floor_diameter = get_floor_diameter(I_dem,depth)
-    print(i, floor_diameter)
     interior_volume = get_interior_volume(I_dem)
     

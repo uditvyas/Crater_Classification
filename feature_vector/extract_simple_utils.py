@@ -75,5 +75,16 @@ def get_floor_diameter(img,depth):
     return floor_diameter
 
 def get_interior_volume(img):
-    interior_volume = 0
+    n, m = img.shape
+    n = min(n,m)        # radius = 1/3 n
+    radius = int(n/3)
+    ext = (n - 2*radius)//2
+    cropped_image = img[ext:n-ext+1, ext:n-ext+1].astype(np.float32)
+    y,x = np.ogrid[-radius: radius+1, -radius: radius+1]
+    mask = x**2+y**2 > radius**2
+    cropped_image = cropped_image[:mask.shape[0], :mask.shape[0]]
+    cropped_image[mask] = np.nan
+
+    interior_volume = np.nansum(np.nanmax(cropped_image)-cropped_image)
+
     return interior_volume
