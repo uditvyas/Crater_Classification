@@ -23,4 +23,7 @@ for i in tqdm(range(len(names))):
     all_features.append(features)
 all_features = np.array(all_features)
 
+maxes = np.max(all_features,axis=0)
+all_features = all_features/maxes[:]
+
 np.save(features_save_dir+'all_features.npy',all_features)
