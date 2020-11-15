@@ -23,5 +23,5 @@ for i in tqdm(range(3,10)):
     y.append(awcss)
     print("Clusters = {}\tScore = {}".format(i,awcss))
 plt.plot(x,y,'bo-')
-plt.savefig(cluster_results_dir+"features_elbow.jpg".format(j))
+plt.savefig(cluster_results_dir+"features_elbow.jpg")
 plt.close()
