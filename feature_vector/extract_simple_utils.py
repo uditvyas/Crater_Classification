@@ -64,7 +64,7 @@ def get_floor_diameter(img,depth):
         mask2 = x**2+y**2 > (r+ring_width)**2
         image[mask1] = np.nan
         image[mask2] = np.nan
-        print(r, np.count_nonzero(mask1), np.count_nonzero(mask2))
+        print(r, np.count_nonzero(mask1), np.count_nonzero(~mask2))
         # print(list(image))
         num_pixels = np.count_nonzero(~np.isnan(image))
         useful_part = image[image<min_point + floor_diameter_threshold*depth]
