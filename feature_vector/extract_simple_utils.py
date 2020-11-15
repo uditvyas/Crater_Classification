@@ -56,23 +56,22 @@ def get_floor_diameter(img,depth):
     cropped_image[mask] = np.nan
     min_point = np.nanmin(cropped_image)
     r = 1
+    ring_width = 1
     while r<radius:
-        ring_width = 2
         image = list(cropped_image)
-        image = np.array(image)
+        image = np.array(image)         # coz it directly worked on cropped_image and did not make a copy
         y,x = np.ogrid[-radius: radius+1, -radius: radius+1]
         mask1 = x**2+y**2 < r**2
         mask2 = x**2+y**2 > (r+ring_width)**2
         image[mask1] = np.nan
         image[mask2] = np.nan
-        print(r, np.count_nonzero(mask1), np.count_nonzero(~mask2))
         num_pixels = np.count_nonzero(~np.isnan(image))
         useful_part = image[image<(min_point + floor_diameter_threshold*depth)]
         num_useful = np.count_nonzero(~np.isnan(useful_part))
         if ((num_pixels-num_useful)/num_pixels)>floor_diameter_tolerance:
             break
         r+=ring_width
-    floor_diameter = 2*r
+    floor_diameter = 2*(r-ring_width)
     return floor_diameter
 
 def get_interior_volume(img):

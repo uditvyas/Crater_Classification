@@ -15,6 +15,4 @@ for i in tqdm(range(len(names))):
     floor_diameter = get_floor_diameter(I_dem,depth)
     print(i, floor_diameter)
     interior_volume = get_interior_volume(I_dem)
-    if(i==10):
-        break
     
