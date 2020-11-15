@@ -8,7 +8,8 @@ all_features = np.load(features_save_dir+'all_features.npy')
 print("Params Loaded: ",all_features.shape)
 
 params = all_features
-
+x = []
+y = []
 for i in tqdm(range(3,10)):
     
     # initialise and fit the Kmeams model
