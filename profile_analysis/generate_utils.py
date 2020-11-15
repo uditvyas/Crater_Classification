@@ -82,17 +82,17 @@ def get_profiles(img, profiles_per_image):
         for i in range(n):
             profile.append(img[ int(y[i]) , int(x[i]) ])
         profile = np.array(profile)
+        profile = profile - np.min(profile)
         all_profiles.append(profile)
     all_profiles = np.array(all_profiles)
     labels = [str(i)+" degree" for i in thetas]
 
     return all_profiles, labels
 
-def generate_save_profiles(dir, save_dir, num, profiles_per_image):
+def generate_save_profiles(dir, save_dir, profiles_per_image):
     print("Generating Profiles....")
     names = os.listdir(dir)
     all_profiles = []
-    all_means = []
     for i in tqdm(range(len(names))):
         name = dir + names[i]
         I_dem = tifffile.imread(name)
