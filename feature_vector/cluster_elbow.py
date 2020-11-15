@@ -5,7 +5,6 @@ import numpy as np
 from paths import *
 
 all_features = np.load(features_save_dir+'all_features.npy')
-names = np.load(params_2D_save_dir+'names.npy')
 print("Params Loaded: ",all_features.shape)
 
 params = all_features
@@ -23,5 +22,5 @@ for i in tqdm(range(3,10)):
     y.append(awcss)
     print("Clusters = {}\tScore = {}".format(i,awcss))
 plt.plot(x,y,'bo-')
-plt.savefig(cluster_results_dir+"profiles_{}.jpg".format(j))
+plt.savefig(cluster_results_dir+"features_elbow.jpg".format(j))
 plt.close()
