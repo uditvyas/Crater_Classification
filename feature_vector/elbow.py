@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from paths import *
 
-all_features = np.load(features_save_dir+'all_2D_params.npy')
+all_features = np.load(features_save_dir+'all_features.npy')
 
 x = []
 y = []
