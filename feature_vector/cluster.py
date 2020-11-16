@@ -14,6 +14,7 @@ params = all_features
 km = KMeans(n_clusters=num_clusters)
 km_result = km.fit(params)
 labels = km.labels_
+np.save(cluster_results_dir+"labels",labels)
 
 tsne = TSNE(n_components=2, verbose=1)
 tsne_results = tsne.fit_transform(params)
