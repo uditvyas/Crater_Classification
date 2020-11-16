@@ -9,8 +9,9 @@ from paths import *
 
 all_features = np.load(features_save_dir+'all_features.npy')
 
+num_clusters = 5
 params = all_features
-km = KMeans(n_clusters=5)
+km = KMeans(n_clusters=num_clusters)
 km_result = km.fit(params)
 labels = km.labels_
 
@@ -22,7 +23,7 @@ data['y'] = tsne_results[:,1]
 data['labels'] = labels
 plt.figure(figsize=(15,15))
 sns.scatterplot(x='x', y='y', 
-                palette=sns.color_palette("hls",8),
+                palette=sns.color_palette("hls",num_clusters),
                 data = data,
                 hue = 'labels',
                 legend = 'full',
