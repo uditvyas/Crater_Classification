@@ -28,5 +28,5 @@ sns.scatterplot(x='x', y='y',
                 hue = 'labels',
                 legend = 'full',
                 alpha = 0.3)
-plt.savefig(cluster_results_dir + "visual_cluster_5.jpg".format(j))
+plt.savefig(cluster_results_dir + "visual_cluster_5.jpg")
 plt.close()
