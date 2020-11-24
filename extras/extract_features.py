@@ -10,7 +10,7 @@ names = np.load(names_dir+"names.npy")
 images,names = load_images(image_dir, names)
 print("Images Loaded: {}".format(len(images)))
 print("Names Loaded: {}".format(len(names)))
-
+'''
 all_3D_params = []
 print("Generating 3D parameters..")
 for i in tqdm(range(num_images)):
@@ -22,7 +22,7 @@ for i in tqdm(range(num_images)):
 all_3D_params = np.array(all_3D_params)
 np.save(params_3D_save_dir+"all_3D_params",all_3D_params)
 print("3D Parameters Generated: ",all_3D_params.shape)
-
+'''
 
 ##########################################################################################
 ## GENERATING 2D PARAMETERS
