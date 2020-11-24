@@ -10,7 +10,7 @@ labels = np.load(cluster_results_dir+"labels.npy")
 
 n_clusters = np.unique(labels)
 
-cluster_save_dir = cluster_results_dir + "KMeans5/"
+cluster_save_dir = cluster_results_dir + "agglo_0.9/"
 
 for label in range(len(n_clusters)):
     os.mkdir(cluster_save_dir+"cluster_{}".format(label))

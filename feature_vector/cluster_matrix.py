@@ -7,7 +7,7 @@ feature_vector = np.load(features_save_dir+"all_features.npy")
 
 print("Features Loaded: ",feature_vector.shape)
 
-cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=0.75, linkage='complete').fit(feature_vector)
+cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=0.90, linkage='complete').fit(feature_vector)
 print("Maximum of Distance Matrix is {}".format(np.max(feature_vector)))
 print("Minimum of Distance Matrix is {}".format(np.min(feature_vector)))
 print("Average of Distance Matrix is {}".format(np.mean(feature_vector)))
