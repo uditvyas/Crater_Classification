@@ -46,5 +46,4 @@ def similarity(first,second,sigma):
         local_sum = compare(first,second_c,sigma)
         all_scores.append(local_sum)
     distance = np.min(np.array(all_scores))
-    print(distance)
     return distance
