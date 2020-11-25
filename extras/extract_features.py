@@ -31,7 +31,7 @@ print("3D Parameters Generated: ",all_3D_params.shape)
 
 all_2D_params = []
 print(names[0])
-for i in tqdm(range(num_images)//8):
+for i in tqdm(range(num_images)):
     profiles = np.load(all_profiles_save_dir+'profiles_{}.npy'.format(names[i].split(".")[0]))
     
     x = list(range(len(profiles[0])))
