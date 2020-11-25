@@ -43,7 +43,7 @@ def similarity(first,second,sigma):
     all_scores = []
     print(first.shape,second.shape)
     for i in range(n):
-        second_c = np.vstack(second[i:n,:],second[0:i,:])
+        second_c = np.vstack((second[i:n,:],second[0:i,:]))
         local_sum = compare(first,second_c,sigma)
         all_scores.append(local_sum)
     distance = np.min(np.array(all_scores))
