@@ -8,6 +8,7 @@ import numpy as np
 from paths import *
 
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
+all_2D_params = np.mean(all_2D_params,axis=1)
 labels = np.load(params_2D_save_dir+'labels.npy')
 
 params = all_2D_params
