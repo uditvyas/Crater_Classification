@@ -23,7 +23,7 @@ data['labels'] = labels
 
 plt.figure(figsize=(15,15))
 sns.scatterplot(x='x', y='y', 
-                palette=sns.color_palette("hls",8),
+                palette=sns.color_palette("hls",len(np.unique(labels))),
                 data = data,
                 hue = 'labels',
                 legend = 'full',
