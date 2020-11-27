@@ -8,28 +8,25 @@ import numpy as np
 from paths import *
 
 all_2D_params = np.load(params_2D_save_dir+'all_2D_params.npy')
+labels = np.load(params_2D_save_dir+'labels.npy')
 
-for j in range(4):
-    params = all_2D_params[:,j,:]
-    km = KMeans(n_clusters=8)
-    km_result = km.fit(params)
-    labels = km.labels_
-    
-    tsne = TSNE(n_components=2, verbose=1)
-    tsne_results = tsne.fit_transform(params)
+params = all_2D_params
 
-    data = pd.DataFrame()
-    data['x'] = tsne_results[:,0]
-    data['y'] = tsne_results[:,1]
-    data['labels'] = labels
+tsne = TSNE(n_components=2, verbose=1)
+tsne_results = tsne.fit_transform(params)
 
-    plt.figure(figsize=(15,15))
-    sns.scatterplot(x='x', y='y', 
-                    palette=sns.color_palette("hls",8),
-                    data = data,
-                    hue = 'labels',
-                    legend = 'full',
-                    alpha = 0.3)
-    plt.savefig(cluster_results_dir + "visual_{}.jpg".format(j))
-    plt.close()
+data = pd.DataFrame()
+data['x'] = tsne_results[:,0]
+data['y'] = tsne_results[:,1]
+data['labels'] = labels
+
+plt.figure(figsize=(15,15))
+sns.scatterplot(x='x', y='y', 
+                palette=sns.color_palette("hls",8),
+                data = data,
+                hue = 'labels',
+                legend = 'full',
+                alpha = 0.3)
+plt.savefig(cluster_results_dir + "visual.jpg")
+plt.close()
 
