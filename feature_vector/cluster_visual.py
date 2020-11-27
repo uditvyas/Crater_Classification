@@ -9,7 +9,7 @@ from paths import *
 
 all_features = np.load(features_save_dir+'all_features.npy')
 
-labels = np.load(params_2D_save_dir+'labels.npy')
+labels = np.load(features_save_dir+'labels.npy')
 
 params = all_features
 
