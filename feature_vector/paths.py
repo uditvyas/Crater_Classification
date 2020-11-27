@@ -1,14 +1,7 @@
 image_dir = '/media/HDD2/btech2/Crater/dataset_v1/dems/'
 ortho_dir = '/media/HDD2/btech2/Crater/dataset_v1/orthos/'
-# all_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/all/'
-# resize_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/resize/'
-# mean_profiles_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/means/'
-# figs_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/figs/'
-# params_3D_save_dir = '/media/HDD2/btech2/Crater/Outputs/params3d/'
-# params_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/params/'
-# cmp_2D_save_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/comparisons/'
 cluster_results_dir = '/media/HDD2/btech2/Crater/Outputs/feature_vector/'
-names_dir = '/media/HDD2/btech2/Crater/Outputs/profiles/'
+names_dir = '/media/HDD2/btech2/Crater/Outputs/feature_vector/'
 features_save_dir = '/media/HDD2/btech2/Crater/Outputs/feature_vector/'
 num_images = 2076
 # sigma = 250
