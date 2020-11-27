@@ -7,7 +7,7 @@ distance_matrix = np.load(cluster_results_dir+"distance_matrix.npy")
 
 print("Distance Matrix Loaded: ",distance_matrix.shape)
 
-cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=0.97, affinity='precomputed', linkage='complete').fit(distance_matrix)
+cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=0.99, affinity='precomputed', linkage='complete').fit(distance_matrix)
 print("Maximum of Distance Matrix is {}".format(np.max(distance_matrix)))
 print("Minimum of Distance Matrix is {}".format(np.min(distance_matrix)))
 print("Average of Distance Matrix is {}".format(np.mean(distance_matrix)))
