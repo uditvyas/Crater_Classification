@@ -12,7 +12,7 @@ labels = np.load(features_save_dir+'labels.npy')
 distance_matrix = pairwise_distances(all_features, metric = 'sqeuclidean')
 distance_matrix = 1 - np.exp(distance_matrix)
 
-dists = squareform(all_features)
+dists = squareform(distance_matrix)
 linkage_matrix = linkage(dists, "single")
 dendrogram(linkage_matrix, labels=labels)
 plt.savefig(cluster_results_dir + "dendogram.jpg")
