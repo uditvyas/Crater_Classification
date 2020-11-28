@@ -1,5 +1,5 @@
 import numpy as np
-
+from paths import *
 from scipy.cluster.hierarchy import dendrogram, linkage
 from scipy.spatial.distance import squareform
 
