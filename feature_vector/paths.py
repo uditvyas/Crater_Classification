@@ -7,7 +7,7 @@ num_images = 2076
 # sigma = 250
 resample_dimension = 75
 # num_profiles = 15
-
+sigma = 25
 depth_param = 1.15
 rim_height_param = 1.3
 rim_width_param = 0.05

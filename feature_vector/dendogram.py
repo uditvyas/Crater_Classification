@@ -10,7 +10,7 @@ all_features = np.load(features_save_dir+'all_features.npy')
 labels = np.load(features_save_dir+'labels.npy')
 
 distance_matrix = pairwise_distances(all_features, metric = 'sqeuclidean')
-distance_matrix = 1 - np.exp(distance_matrix)
+distance_matrix = 1 - np.exp(-distance_matrix/sigma**2)
 
 dists = squareform(distance_matrix)
 linkage_matrix = linkage(dists, "single")
